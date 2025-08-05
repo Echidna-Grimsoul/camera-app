@@ -1,0 +1,33 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Camera-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Echidna-Grimsoul/camera-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Echidna-Grimsoul/camera-app/issues"
+  },
+  "homepage": "https://github.com/Echidna-Grimsoul/camera-app#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dgram": "^1.0.1",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "onvif": "^0.8.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.8.1",
+    "sqlite3": "^5.1.7",
+    "stripe": "^18.4.0"
+  }
+}

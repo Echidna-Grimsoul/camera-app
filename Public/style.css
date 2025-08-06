@@ -1,0 +1,23 @@
+/* public/style.css */
+
+/* Shared badge styling */
+.badge {
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* VIP badge */
+.vip {
+  background-color: rgba(204, 0, 255, 0.425);
+  color: black;
+}
+
+/* Admin badge */
+.admin {
+  background-color: rgba(204, 0, 255, 0.425);
+  color: rgba(255, 0, 0, 0.438);
+}

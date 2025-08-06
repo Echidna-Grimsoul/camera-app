@@ -1,0 +1,45 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>User Dashboard</h1>
+  <p>Below is the list of registered users. VIPs and Admins have special badges:</p>
+
+  <!-- User List & Badges -->
+  <ul id="user-list"></ul>
+
+  <script>
+    fetch('/api/users')
+      .then(response => {
+        if (!response.ok) throw new Error('Not authenticated');
+        return response.json();
+      })
+      .then(users => {
+        const ul = document.getElementById('user-list');
+        users.forEach(u => {
+          const li = document.createElement('li');
+          li.textContent = u.username;
+          if (u.role === 'vip' || u.role === 'admin') {
+            const badge = document.createElement('span');
+            badge.textContent = u.role.toUpperCase();
+            badge.className = `badge ${u.role}`;
+            li.appendChild(badge);
+          }
+          ul.appendChild(li);
+        });
+      })
+      .catch(err => {
+        const ul = document.getElementById('user-list');
+        ul.textContent = 'Error loading users or not logged in.';
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html>
